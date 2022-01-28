@@ -28,7 +28,7 @@ class Library:
             print(f"{index + 1}) {value}")
 
 
-harry = Library()
+user = Library()
 while 1:
     while 1:
         print("Press 1 to display available books")
@@ -57,13 +57,13 @@ while 1:
                 book_index = input("Which book do you want to lend (Enter the index)")
                 if book_index == "99":
                     break
-    
+
                 try:
                     book_index = int(book_index)
                     if book_index not in range(1, len(Library.books) + 1):
                         print("Invalid input it must be a index of a book")
                     else:
-                        harry.lend_book(book_index)
+                        user.lend_book(book_index)
                         break
                 except ValueError:
                     print("Invalid input it must be a index of a book")
@@ -80,10 +80,10 @@ while 1:
             else:
                 print("Book already in Library")
     elif choice == 4:
-        if len(harry.books) == 0:
+        if len(user.books) == 0:
             print("You don't have any books to return")
         else:
-            harry.display_self_books()
+            user.display_self_books()
             while 1:
                 print("Press 99 to break")
                 book_index = input("Which book do you want to lend (Enter the index)")
@@ -91,14 +91,14 @@ while 1:
                     break
                 try:
                     book_index = int(book_index)
-    
-                    if book_index not in range(1, len(harry.books) + 1):
+
+                    if book_index not in range(1, len(user.books) + 1):
                         print("Invalid input it must be a index of a book")
                     else:
-                        harry.return_book(book_index)
+                        user.return_book(book_index)
                         break
                 except ValueError:
                     print("Invalid input it must be a index of a book")
     elif choice == 5:
-        harry.display_self_books()
+        user.display_self_books()
     print()
